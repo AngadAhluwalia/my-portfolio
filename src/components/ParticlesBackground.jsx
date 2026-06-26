@@ -55,7 +55,7 @@ export default function ParticlesBackground() {
       // Re-create particles when resized so they adapt to new dimensions
       CreateParticles();
     }
-    
+      
     // Initial size and particle creation
     handleResize();
     window.addEventListener("resize", handleResize);
