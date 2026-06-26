@@ -1,5 +1,5 @@
 import OverlayMenu from "./OverlayMenu";
-import { useState, useEffect, useRef } from "react";   // ✅ added useEffect
+import { useState, useEffect, useRef } from "react";
 import Logo from "../assets/Logo.png";
 import { FiMenu } from "react-icons/fi";
 
@@ -11,7 +11,7 @@ export default function Navbar() {
   const lastScrollY=useRef(0);
   const timerId =useRef(null);
   useEffect (() => {
-    const homeSection=document.querySelector("#home");
+    const homeSection=document.querySelector("#Home");
     const observer =new IntersectionObserver(
       ([entry])=> {
         if(entry.isIntersecting){
@@ -72,7 +72,7 @@ export default function Navbar() {
     <>
       <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
         <div className="flex items-center space-x-2">
-          <img src={Logo} alt="logo" className="w-8 h-8" />
+          <img src={Logo} alt="logo" className="w-10 h-9" />
           <div className="text-2xl font-bold text-white hidden sm:block">Angad</div>
         </div>
 
