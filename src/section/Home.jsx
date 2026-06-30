@@ -56,6 +56,9 @@ export default function Home() {
               <span>{roles[index].substring(0, subIndex)}</span>
               <span className="inline-block w-[2px] h-[1em] ml-1 bg-white animate-pulse align-middle"></span>
             </motion.div>
+            <h1>
+              Hello I'm <span className="text-[#00bf8f]">Angad Ahluwalia</span>, a passionate developer with expertise in building modern web applications.
+            </h1>
           </div>
         </div>
       </div>
