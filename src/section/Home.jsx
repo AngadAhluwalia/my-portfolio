@@ -1,7 +1,8 @@
 import React, { useMemo } from "react"
 import ParticlesBackground from "../components/ParticlesBackground"
-import { motion, scale } from "framer-motion"
+import { motion, scale} from "framer-motion"
 import { FaLinkedin, FaGithub } from "react-icons/fa6"
+import avatar from "../assets/avator.png"
 
 const socials =[
   {Icon :FaLinkedin,label:"LinkedIn", href:"https://www.linkedin.com/in/angad-ahluwalia/"},
@@ -99,9 +100,18 @@ export default function Home() {
                 download="Angad_Ahluwalia.pdf"
                 className="px-6 py-3 bg-white  text-lg font-medium text-black rounded-full shadow-lg hover:scale-105 transition-all">My resume</a>
               </motion.div>
-              <div className="mt-10 flex-gap-5 text=2xl md:text-3xl justify-center lg:justify-start">{socials.map(({Icon , label, href})=>(<motion.a href={href} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className="flex items-center gap-2 text-white hover:underline"><Icon className="w-5 h-5" /><span>{label}</span></motion.a>))}</div>
+              <div className="mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start">{socials.map(({Icon , label, href})=>(<motion.a href={href} key={label} whileTap={{ scale: 0.95 }} className="flex items-center gap-2 text-white hover:underline"><Icon className="w-5 h-5" /><span>{label}</span></motion.a>))}</div>
 
           </div>
+        </div>
+        <div className="relative hidden lg:block">
+          <div></div>
+          <motion.img src={avatar} alt="Angad Ahluwalia" className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none"
+          style={{ right: "-30px",width: "min(45vw,780px)", maxHeight: "90vh" }}
+          initial={{ opacity: 0, y:40, scale :0.98 }}
+          animate={{ opacity: 1, y: 0  ,scale:1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          />
         </div>
       </div>
     </section>
