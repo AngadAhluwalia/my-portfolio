@@ -1,6 +1,13 @@
 import React, { useMemo } from "react"
 import ParticlesBackground from "../components/ParticlesBackground"
 import { motion } from "framer-motion"
+import { FaLinkedin, FaGithub } from "react-icons/fa6"
+
+const socials =[
+  {Icon :FaLinkedin,label:"LinkedIn", href:"https://www.linkedin.com/in/angad-ahluwalia/"},
+  {Icon :FaGithub,label:"GitHub", href:"https://github.com/AngadAhluwalia"}
+  
+]
 
 export default function Home() {
   const roles = useMemo(() => ["Web Developer", "Software Developer"], [])
@@ -62,12 +69,24 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
             >
               Hello I'm <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap">Angad Ahluwalia</span>
+              </motion.h1>
               <motion.p className="mt-6 text-base sm:text-lg md:text-xl  text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
               >a passionate developer with expertise in building modern web applications.</motion.p>
-            </motion.h1>
+              <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              >
+                <a href="#projects" className="px-6 py-3 bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-all"
+                > View my Work</a>
+                <a href="/Angad_Ahluwalia.pdf"
+                download="Angad_Ahluwalia.pdf"
+                className="px-6 py-3 bg-white  text-lg font-medium text-black rounded-full shadow-lg hover:scale-105 transition-all">My resume</a>
+              </div>
+            
           </div>
         </div>
       </div>
