@@ -56,9 +56,18 @@ export default function Home() {
               <span>{roles[index].substring(0, subIndex)}</span>
               <span className="inline-block w-[2px] h-[1em] ml-1 bg-white animate-pulse align-middle"></span>
             </motion.div>
-            <h1>
-              Hello I'm <span className="text-[#00bf8f]">Angad Ahluwalia</span>, a passionate developer with expertise in building modern web applications.
-            </h1>
+            <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from [#1cd8d2] via-[#00bf8f] to-[#302b63] drop-shadow-lg"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              Hello I'm <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap">Angad Ahluwalia</span>
+              <motion.p className="mt-6 text-base sm:text-lg md:text-xl  text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              >a passionate developer with expertise in building modern web applications.</motion.p>
+            </motion.h1>
           </div>
         </div>
       </div>
