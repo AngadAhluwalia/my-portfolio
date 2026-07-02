@@ -105,7 +105,10 @@ export default function Home() {
           </div>
         </div>
         <div className="relative hidden lg:block">
-          <div></div>
+          <div
+          className="absolute top-1/2 -translate-y-1/2  pointer-events-none "
+          style={{ right: "10px",width: "min(22vw,410px)", height: "min(45vw,760px)", borderRadius: "50% 50% 50% 50% / 50% 50% 50% 50%", background: "conic-gradient(from 0deg,#1cd8d2,#00bf8f,#302b63, #1cd8d2)", filter: "blur(30px)", opacity: 0.32 }}
+          />
           <motion.img src={avatar} alt="Angad Ahluwalia" className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none"
           style={{ right: "-30px",width: "min(45vw,780px)", maxHeight: "90vh" }}
           initial={{ opacity: 0, y:40, scale :0.98 }}
