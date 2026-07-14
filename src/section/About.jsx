@@ -1,5 +1,6 @@
 import {motion} from "framer-motion";
-
+import React from "react";  
+import p from "../assets/boy.JPG"
 
 
 export default function About() {
@@ -16,14 +17,18 @@ export default function About() {
       </div>
       <div className="relative z-10 max-w-6xl w-full mx-auto px-6  md:px-10 lg:px-12 py-20 flex flex-col  gap-12">
 
-      </div>
+      
       <motion.div className="flex flex-col md:flex-row items-center md:items-strech gap-8"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.4 }}>
+          <motion.div className="relative w-[160px] h-[160px] md:w-[200px] md:h-[200px] rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-[#1cd8d2]/20 to-[#302b63]/20 border border-[#1cd8d2]/25">
+            <img src={p} alt="profile" className="absolute inset-0"></img>
+          </motion.div>
 
       </motion.div>
+      </div>
 
 
 
