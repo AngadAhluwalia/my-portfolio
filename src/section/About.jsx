@@ -1,4 +1,4 @@
-
+import {motion} from "framer-motion";
 
 
 
@@ -9,11 +9,21 @@ export default function About() {
   ]
   return (
     <section id="about" className="w-full min-h-screen relative items-center justify-center bg-black text-white overflow-hidden flex">
-      <div>
+      <div className="absolute inset-0 pointer-events-none">
         {glows.map((c,i)=>(
           <div key={i} className={`absolute rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] animate-pulse ${c}`}></div>
         ))}
       </div>
+      <div className="relative z-10 max-w-6xl w-full mx-auto px-6  md:px-10 lg:px-12 py-20 flex flex-col  gap-12">
+
+      </div>
+      <motion.div className="flex flex-col md:flex-row items-center md:items-strech gap-8"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.4 }}>
+
+      </motion.div>
 
 
 
