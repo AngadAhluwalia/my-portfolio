@@ -42,7 +42,7 @@ export default function About() {
             <p className="mt-4 text-grey-300 text-base sm:text-lg max-w-2xl md:max-w-3xl">
               I build scaleable,modern and responsive web applications using the latest technologies. I have a passion for creating beautiful and functional user interfaces, and I am always looking for new challenges to improve my skills.
             </p>
-            <div>
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl md:max-w-3xl ">
               {stats.map((item,i)=>(
                 <motion.div key={i} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center
                 "
@@ -54,6 +54,10 @@ export default function About() {
                  <div className="text-base font-semibold">{item.value}</div>
                 </motion.div>
               ))}
+            </div>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
+              <a href="#Projects" className="inline flex items-center justify-center rounded-lg bg-white text-black font-semibold px-5 py-3 hover:bg-gray-300">View Projects</a>
+              <a href="#Contact" className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white font-semibold px-5 py-3 hover:bg-white/20 transition">Get in Touch</a>
             </div>
           </div>
 
