@@ -124,7 +124,7 @@ const Home = React.forwardRef((props, ref) => {
               Hello, I&apos;m
               <br />
               <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap">
-                Gaurav Gupta
+                Angad Ahluwalia
               </span>
             </motion.h1>
 

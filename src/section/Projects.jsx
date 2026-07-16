@@ -51,7 +51,7 @@ export default function Projects() {
         title: "nk studio",
         link: "https://www.nk.studio/",
         bgColor: "#0d4d3d",
-        image: isMobile ? photo1 : img1, // Mobile vs desktop image
+        image: isMobile ? photo1 : img1, 
       },
       {
         title: "Gamily",
@@ -67,37 +67,36 @@ export default function Projects() {
       },
     ],
     [isMobile] 
-    // Memoize to prevent recalculating unless screen size changes
+
   );
 
   const sceneRef = React.useRef(null); 
-  // Reference to the whole projects section (used for scroll tracking)
+
 
   const { scrollYProgress } = useScroll({
     target: sceneRef, 
     offset: ["start start", "end end"], 
-    // Scroll progress is 0 when section top hits viewport top and 1 at the end
+
   });
 
   const thresholds = projects.map((_, i) => (i + 1) / projects.length); 
-  // Array of thresholds to switch between projects as user scrolls
-  const [activeIndex, setActiveIndex] = React.useState(0); 
-  // Keeps track of which project is currently active
 
-  // 🔹 Update activeIndex as user scrolls
+  const [activeIndex, setActiveIndex] = React.useState(0); 
+
+
+
   React.useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((v) => {
       const idx = thresholds.findIndex((t) => v <= t); 
-      // Find the first threshold that is greater than or equal to scroll progress
-      setActiveIndex(idx === -1 ? thresholds.length - 1 : idx); 
-      // If not found, show the last project
+  
+      setActiveIndex(idx === -1 ? thresholds.length - 1 : idx);
     });
-    return () => unsubscribe(); 
-    // Cleanup scroll listener
+    return () => unsubscribe();
+
   }, [scrollYProgress, thresholds]);
 
-  const activeProject = projects[activeIndex]; 
-  // Currently displayed project
+  const activeProject = projects[activeIndex];
+
 
   return (
     <section
@@ -106,13 +105,12 @@ export default function Projects() {
       className="relative text-white"
       style={{
         height: `${100 * projects.length}vh`, 
-        // Section height = 100vh per project (makes scroll-based transitions work) 
         backgroundColor: activeProject.bgColor, 
-        // Background changes color based on active project
+
         transition: "background-color 400ms ease",
       }}
     >
-      {/* Sticky container keeps content fixed while scrolling */}
+     
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
         
         {/* Section Title */}
