@@ -1,90 +1,104 @@
-import OverlayMenu from "./OverlayMenu";
 import { useState, useEffect, useRef } from "react";
-import Logo from "../assets/Logo.png";
+import OverlayMenu from "./OverlayMenu";
 import { FiMenu } from "react-icons/fi";
+import Logo from "../assets/Logo.png"; // Adjust path
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-  const[forceVisible, setForceVisible]=useState(false);
+  const [forceVisible, setForceVisible] = useState(false);
+  const lastScrollY = useRef(0);
+  const timerId = useRef(null);
 
-  const lastScrollY=useRef(0);
-  const timerId =useRef(null);
-  useEffect (() => {
-    const homeSection=document.querySelector("#Home");
-    const observer =new IntersectionObserver(
-      ([entry])=> {
-        if(entry.isIntersecting){
-          setForceVisible(true)
-        setVisible(true);
-      }else{
-        setForceVisible(false);
-      }
-      },{threshold:0.1}
-    )
-    if(homeSection) observer.observe(homeSection);
-    return () => {
-      if(homeSection) observer.unobserve(homeSection);
-
-    }
-  },[])
-
-  useEffect(()=>{
-    const handleScroll =() => {
-      if(forceVisible){
-        setVisible(true);
-          return
-        
-      }
-      const currentScrollY=window.scrollY;
-      if(currentScrollY>lastScrollY){
-        setVisible(false);
-      }else{
-        setVisible(true);
-        if(timerId.current) clearTimeout(timerId.current);
-        timerId.current=setTimeout(()=>{
-          setVisible(false);
-        } ,3000)
-      }
-      lastScrollY.current=currentScrollY
-    }
-    window.addEventListener("scroll",handleScroll,{ passive:true})
-    return () =>{
-      window.removeEventListener("scroll",handleScroll)
-      if(timerId.current) clearTimeout(timerId.current);
-
-    }
-  },[forceVisible])
   useEffect(() => {
-    let lastScrollY = window.scrollY;
+    const homeSection = document.querySelector("#home");
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setForceVisible(true);
+          setVisible(true); // Always visible on homepage
+        } else {
+          setForceVisible(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (homeSection) observer.observe(homeSection);
+
+    return () => {
+      if (homeSection) observer.unobserve(homeSection);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
+      // If on homepage, never hide navbar
+      if (forceVisible) {
+        setVisible(true);
+        return;
+      }
+
       const currentScrollY = window.scrollY;
-      setVisible(currentScrollY < lastScrollY || currentScrollY < 50);
-      lastScrollY = currentScrollY;
+
+      if (currentScrollY > lastScrollY.current) {
+        // scrolling down -> hide
+        setVisible(false);
+      } else {
+        // scrolling up -> show
+        setVisible(true);
+
+        // hide again after 3sec idle
+        if (timerId.current) clearTimeout(timerId.current);
+        timerId.current = setTimeout(() => {
+          setVisible(false);
+        }, 3000);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timerId.current) clearTimeout(timerId.current);
+    };
+  }, [forceVisible]);
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
+      <nav
+        className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 transition-transform duration-300 ${
+          visible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src={Logo} alt="logo" className="w-10 h-9" />
-          <div className="text-2xl font-bold text-white hidden sm:block">Angad</div>
+          <img src={Logo} alt="Logo" className="w-8 h-8" />
+          <div className="text-2xl font-bold text-white hidden sm:block">
+            Angad
+          </div>
         </div>
 
-        <div className="block lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2"></div>
+        {/* Menu Button */}
+        <div className="block lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="text-white text-3xl focus:outline-none"
+            aria-label="Open menu"
+          >
+            <FiMenu />
+          </button>
+        </div>
 
-        <button onClick={() => setMenuOpen(true)} className="text-white text-3xl focus:outline-none">
-          <FiMenu />
-        </button>
-
+        {/* Contact Button */}
         <div className="hidden lg:block">
-          <a href="#Contact" className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-5 py-2 rounded-full font-medium shadow-lg hover:opacity-90 transition-opacity duration-300">
-            Reach out
+          <a
+            href="#contact"
+            className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-5 py-2 rounded-full font-medium shadow-lg hover:opacity-90 transition-opacity duration-300"
+          >
+            Reach Out
           </a>
         </div>
       </nav>
