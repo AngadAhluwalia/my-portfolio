@@ -1,20 +1,20 @@
-// Importing React library so we can create and use components
+
 import React from "react";
 
-// Importing image assets for the testimonials section
-import m1 from "../assets/m1.png"; // Male testimonial image 1
-import m2 from "../assets/m2.png"; // Male testimonial image 2
-import w1 from "../assets/w1.png"; // Female testimonial image 1
-import w2 from "../assets/w2.png"; // Female testimonial image 2
 
-// Importing Framer Motion for smooth animations
+import m1 from "../assets/m1.png"; 
+import m2 from "../assets/m2.png"; 
+import w1 from "../assets/w1.png"; 
+import w2 from "../assets/w2.png"; 
+
+
 import { motion } from "framer-motion";
 
-// Creating shorter variables for motion components to make code cleaner
+
 const MH2 = motion.h2; // Animated <h2> tag
 const MDiv = motion.div; // Animated <div> tag
 
-// Array containing all testimonial data (name, role, review, image)
+
 const testimonials = [
   {
     name: "Yash Sahu",
