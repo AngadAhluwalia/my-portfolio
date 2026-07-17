@@ -39,7 +39,7 @@ export default function Navbar() {
         setVisible(true);
         return;
       }
-
+dwnqddkwqd
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY.current) {
