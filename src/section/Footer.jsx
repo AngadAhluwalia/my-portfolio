@@ -72,7 +72,7 @@ const Footer = () => {
               textShadow: "0 2px 18px rgba(0,0,0,0.45)",
             }}
           >
-            Gaurav Gupta
+            Angad Ahluwalia
           </h1>
         </div>
 
@@ -115,7 +115,7 @@ const Footer = () => {
         {/* --- Copyright / Trademark --- */}
         {/* Auto-updates year dynamically */}
         <p className="text-xs text-gray-400">
-          © {new Date().getFullYear()} Gaurav Gupta. All rights reserved.
+          © {new Date().getFullYear()} Angad Ahluwalia. All rights reserved.
         </p>
       </motion.div>
     </footer>
