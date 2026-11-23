@@ -22,3 +22,33 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables / secrets (EmailJS keys etc.)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials*.json
+service-account*.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / cache
+build
+coverage
+.vite
+.cache
+*.tsbuildinfo
+.eslintcache
+
+# Deployment tooling
+.vercel
+.netlify
+.firebase
+
