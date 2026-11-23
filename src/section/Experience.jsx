@@ -6,29 +6,26 @@ import { motion, useScroll, useTransform } from "framer-motion";
 // Array of experience objects containing job details
 const experiences = [
   {
-    role: "Web Developer",
-    company: "Brain Mentors",
-    duration: "2022",
+    role: "Full Stack Developer",
+    company: "ElleHacks",
+    duration: "May 2025 - Nov 2026",
     description:
-      "Worked with team to build high-performance apps, integrated AI features, and improved engagement by 10%.",
+      "Supported the technical setup of Canada's largest all-women & non-binary hackathon (250+ participants), managed IT infrastructure and digital tools, and implemented Git-based workflows with the organizing committee.",
   },
-  
   {
-    role: "Web Developer Intern",
-    company: "Mobisoft Technologies",
-    duration: "2022 - 2023",
+    role: "Software Developer",
+    company: "YU Blueprint",
+    duration: "Aug 2025 - Jul 2026",
     description:
-      "In this internship , I gained valuable hands on experience and exposure to various aspects of web development.",
+      "Built an interactive scam training simulator with React and JavaScript to help seniors defend against online fraud, working in an agile team with developers, designers and project managers.",
   },
-{
-    role: "Graduate Engineer",
-    company: "HCL Technologies",
-    duration: "2024 - 2025",
+  {
+    role: "Software QA Automation Co-op",
+    company: "FGF Brands",
+    duration: "Sep 2026 - Present",
     description:
-      "Built the frontend of a GenAI-powered PV Intake Application using Next.js and TypeScript for a U.S life sciences client, enabling automated patient report processing across global regions.",
+      "QA automation for web and Android manufacturing apps. Built AI-driven test frameworks (Playwright, Appium, Azure OpenAI) running in Azure DevOps CI/CD, plus parallel Android testing on BrowserStack.",
   },
-
-
 ];
 
 // Reusable component to render each experience item with animations
