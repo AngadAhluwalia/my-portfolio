@@ -2,16 +2,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import avatar from "../assets/avator.png";
-import { FaXTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa6";
-import { FaYoutube, FaInstagram } from "react-icons/fa6";
+import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa6";
 import ParticleBackground from "../components/ParticlesBackground";
 
 const socials = [
-  { Icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@gauravbitss" },
-  { Icon: FaXTwitter, label: "X", href: "https://x.com/gauravbuilds" },
-  { Icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/gaurav-gupta-4179671b0/" },
-  { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/gauravbits/" },
-  { Icon: FaGithub, label: "GitHub", href: "https://github.com/gauravgupta364" },
+  { Icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/angad-ahluwalia/" },
+  { Icon: FaGithub, label: "GitHub", href: "https://github.com/AngadAhluwalia" },
+  { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/angad_0602/" },
 ];
 
 

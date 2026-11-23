@@ -2,8 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaYoutube,
-  FaXTwitter,
   FaLinkedinIn,
   FaInstagram,
   FaGithub,
@@ -16,11 +14,9 @@ import {
  * - Add/remove items if you want more or fewer social platforms
  */
 const socials = [
-  { Icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@gauravbitss" },
-  { Icon: FaXTwitter, label: "X", href: "https://x.com/gauravbuilds" },
-  { Icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/gaurav-gupta-4179671b0/" },
-  { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/gauravbits/" },
-  { Icon: FaGithub, label: "GitHub", href: "https://github.com/gauravgupta364" },
+  { Icon: FaLinkedinIn, label: "LinkedIn", href: "https://www.linkedin.com/in/angad-ahluwalia/" },
+  { Icon: FaGithub, label: "GitHub", href: "https://github.com/AngadAhluwalia" },
+  { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/angad_0602/" },
 ];
 
 /**
